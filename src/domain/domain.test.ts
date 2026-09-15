@@ -86,6 +86,10 @@ describe('ladder', () => {
     const rungs = blocksFor('rud-singles', 9, { ...EMPTY_PROGRESS, tempoPRs: { 'rud-singles': 150 } }, logs)
     expect(rungs[0].bpm).toBe(130)
   })
+  it('a low clean baseline pulls the whole ladder down', () => {
+    const rungs = blocksFor('rud-singles', 9, { ...EMPTY_PROGRESS, tempoPRs: { 'rud-singles': 110 } }, [])
+    expect(rungs.map((r) => r.bpm)).toEqual([100, 105, 110, 115])
+  })
 })
 
 describe('scoring', () => {

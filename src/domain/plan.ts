@@ -201,8 +201,8 @@ export const blocksFor = (
   if (ex.ladder) {
     const { rungs, stepBpm, restSeconds } = ex.ladder
     const pr = progress.tempoPRs[exerciseId]
+    // With a PR, end one step above it; without one, use the library guess.
     let start = pr ? pr - stepBpm * (rungs - 2) : ex.ladder.startBpm
-    start = Math.max(start, ex.ladder.startBpm)
 
     // Fatigue guard: two consecutive sloppy logs at the same tempo -> drop 10.
     const last = recentLogs
@@ -210,6 +210,7 @@ export const blocksFor = (
       .sort((a, b) => b.date.localeCompare(a.date))
       .slice(0, 2)
     if (last.length === 2 && last.every((l) => l.quality === 'sloppy' && l.bpm === last[0].bpm)) start -= 10
+    start = Math.max(40, start) // never below a sane floor, but never pinned to the library guess
 
     // Rest time is taken out of the slot so the slot length stays honest.
     const restTotal = (restSeconds * (rungs - 1)) / 60
