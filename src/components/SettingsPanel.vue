@@ -74,16 +74,17 @@ const togglePadDay = (d: number) => {
 </template>
 
 <style scoped>
-.settings { max-width: 640px; margin: 0 auto; padding: 1.5rem 1.25rem 6rem; }
-h2 { font-family: var(--display); font-size: 2.4rem; margin: 0 0 1rem; color: var(--paper); }
-h3 { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); margin: 2rem 0 0.5rem; display: flex; justify-content: space-between; }
-.total { color: var(--accent); }
-.row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.settings { max-width: 640px; margin: 0 auto; padding: 24px 20px 96px; }
+h2 { font-family: var(--display); font-size: 40px; line-height: 44px; font-weight: 400; margin: 0 0 16px; color: var(--paper); }
+h3 { font-family: var(--mono); font-size: 12px; line-height: 16px; font-weight: 400; letter-spacing: 0.02em; color: var(--ink-dim); margin: 32px 0 8px; display: flex; justify-content: space-between; }
+.total { color: var(--accent); font-variant-numeric: tabular-nums; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .k { color: var(--ink); }
-.seg { display: flex; gap: 0.25rem; flex-wrap: wrap; justify-content: flex-end; }
-.seg button { background: none; border: 1px solid var(--line); color: var(--ink-dim); font-family: var(--mono); font-size: 0.75rem; padding: 0.4rem 0.6rem; cursor: pointer; }
-.seg button.on { border-color: var(--accent); color: var(--paper); background: rgba(255, 90, 31, 0.12); }
+.seg { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+.seg button { background: none; border: 1px solid var(--line); color: var(--ink-dim); font-family: var(--mono); font-size: 12px; line-height: 16px; height: 32px; min-width: 32px; padding: 0 8px; cursor: pointer; transition: color 150ms var(--ease), border-color 150ms var(--ease), background-color 150ms var(--ease); }
+.seg button:hover:not(:disabled) { color: var(--paper); }
+.seg button.on { border-color: var(--accent); color: var(--paper); background: var(--raised); }
 .seg button:disabled { opacity: 0.3; cursor: default; }
-input[type='number'] { width: 4.5rem; background: none; border: 1px solid var(--line); color: var(--paper); font-family: var(--mono); padding: 0.4rem 0.5rem; text-align: right; }
-.hint { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); margin-top: 0.75rem; }
+input[type='number'] { width: 72px; height: 32px; background: none; border: 1px solid var(--line); color: var(--paper); font-family: var(--mono); font-variant-numeric: tabular-nums; padding: 0 8px; text-align: right; }
+.hint { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--ink-dim); margin-top: 12px; }
 </style>

@@ -116,9 +116,9 @@ const stickY = computed(() => countsY.value + 17)
 .ghost { fill: none; stroke: var(--ink); stroke-width: 1.2; }
 .grace { fill: var(--accent); }
 .cross line { stroke: var(--paper); stroke-width: 1.8; stroke-linecap: round; }
-.accent { fill: var(--accent); font-size: 12px; font-weight: 700; }
+.accent { fill: var(--accent); font-size: 12px; font-weight: 500; }
 .count { fill: var(--ink-dim); font-size: 10px; }
 .count.strong { fill: var(--paper); font-weight: 500; font-size: 11px; }
-.stick { fill: var(--tape); font-size: 10px; font-weight: 500; }
-.caption { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-dim); margin: 0.35rem 0 0; letter-spacing: 0.04em; }
+.stick { fill: var(--ink); font-size: 10px; font-weight: 500; }
+.caption { font-family: var(--mono); font-size: 12px; line-height: 16px; color: var(--ink-dim); margin: 4px 0 0; letter-spacing: 0.02em; }
 </style>
